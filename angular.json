@@ -6,31 +6,228 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "demo-v21": {
+    "web": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "",
-      "sourceRoot": "src",
+      "root": "projects/web",
+      "sourceRoot": "projects/web/src",
+      "prefix": "app-bank",
+      "i18n": {
+        "sourceLocale": "pl",  
+        "locales": {
+          "en": "projects/web/src/locale/messages.en.xlf",
+          "uk": "projects/web/src/locale/messages.uk.xlf"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/web/src/main.ts",
+            "tsConfig": "projects/web/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "localize": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/web/public"
+              }
+            ],
+            "styles": [
+              "projects/web/src/styles.scss"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development-en": {
+              "localize": ["en"],
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            },
+            "development-uk": {
+              "localize": ["uk"],
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+              },
+            "development": {
+              "localize": ["pl"],
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "web:build:production"
+            },
+            "development-en": {
+              "buildTarget": "web:build:development-en"
+            },
+            "development-uk": {
+              "buildTarget": "web:build:development-uk"
+            },
+            "development": {
+              "buildTarget": "web:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "mobile": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/mobile",
+      "sourceRoot": "projects/mobile/src",
+      "prefix": "app-mobile",
+      "i18n": {
+        "sourceLocale": "pl",  
+        "locales": {
+          "en": "projects/mobile/src/locale/messages.en.xlf",
+          "uk": "projects/mobile/src/locale/messages.uk.xlf"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/mobile/src/main.ts",
+            "tsConfig": "projects/mobile/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "localize": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/mobile/public"
+              }
+            ],
+            "styles": [
+              "projects/mobile/src/styles.scss"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development-en": {
+              "localize": ["en"],
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            },
+            "development-uk": {
+              "localize": ["uk"],
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+              },
+            "development": {
+              "localize": ["pl"],
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "mobile:build:production"
+            },
+            "development-en": {
+              "buildTarget": "mobile:build:development-en"
+            },
+            "development-uk": {
+              "buildTarget": "mobile:build:development-uk"
+            },
+            "development": {
+              "buildTarget": "mobile:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "admin": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/admin",
+      "sourceRoot": "projects/admin/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "src/main.ts",
-            "tsConfig": "tsconfig.app.json",
+            "browser": "projects/admin/src/main.ts",
+            "tsConfig": "projects/admin/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "localize": true,
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "projects/admin/public"
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "projects/admin/src/styles.scss"
             ]
           },
           "configurations": {
@@ -61,10 +258,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "demo-v21:build:production"
+              "buildTarget": "admin:build:production"
             },
             "development": {
-              "buildTarget": "demo-v21:build:development"
+              "buildTarget": "admin:build:development"
             }
           },
           "defaultConfiguration": "development"

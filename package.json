@@ -3,8 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start:web": "ng serve web",
+    "start:mobile": "ng serve mobile",
+    "build:web": "ng build web",
+    "build:mobile": "ng build mobile",
+    "extract:i18n:web": "ng extract-i18n web --output-path=projects/web/src/locale/",
+    "extract:i18n:mobile": "ng extract-i18n mobile --output-path=projects/mobile/src/locale/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -27,8 +31,10 @@
     "@angular/compiler": "^21.0.0",
     "@angular/core": "^21.0.0",
     "@angular/forms": "^21.0.0",
+    "@angular/localize": "^21.0.0",
     "@angular/platform-browser": "^21.0.0",
     "@angular/router": "^21.0.0",
+    "@angular/service-worker": "^21.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
@@ -37,7 +43,7 @@
     "@angular/cli": "^21.0.0",
     "@angular/compiler-cli": "^21.0.0",
     "jsdom": "^27.1.0",
-    "typescript": "~5.9.2",
+    "typescript": "~5.9.3",
     "vitest": "^4.0.8"
   }
 }
