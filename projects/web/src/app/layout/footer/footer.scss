@@ -1,0 +1,10 @@
+.footer {
+  min-height: 100px;
+  padding-bottom: env(--safe-area-inset-bottom, 0px);
+  box-sizing: content-box;
+  background-color: var(--color-background-secondary);
+  padding-top: var(--spacing-stack-l);
+  padding-bottom: calc(var(--spacing-stack-l) + env(--safe-area-inset-bottom, 0px));
+  padding-left: calc(var(--spacing-inline-l) + env(--safe-area-inset-left, 0px));
+  padding-right: calc(var(--spacing-inline-l) + env(--safe-area-inset-right, 0px));
+}

@@ -1,0 +1,27 @@
+// tokens: scss
+
+:root {
+  --color-text-primary: #000;
+  --color-background-primary: #fff;
+  --color-background-secondary: #f0f0f0;
+
+  --spacing-inline-l: 20px;
+  --spacing-stack-l: 20px;
+
+  @media (prefers-color-scheme: dark) {
+    --color-text-primary: #fff;
+    --color-background-primary: #000;
+    --color-background-secondary: #111;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: var(--color-text-primary);
+  background-color: var(--color-background-primary);
+}

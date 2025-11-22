@@ -2,11 +2,11 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
 	{
-		path: 'main',
-		loadComponent: () => import('./layout/main-layout/main-layout.component').then(m => m.MainLayoutComponent),
+		path: '',
+		loadComponent: () => import('./layout/view-main/view-main').then(m => m.ViewMain),
     children: [
       {
-        path: 'child',
+        path: '',
         loadComponent: () => import('../../../../components/child/child').then(m => m.Child)
       }
     ],

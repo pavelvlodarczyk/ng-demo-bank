@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  padding-top: env(--safe-area-inset-top, 0px);
+  padding-left: calc(var(--spacing-inline-l) + env(--safe-area-inset-left, 0px));
+  padding-right: calc(var(--spacing-inline-l) + env(--safe-area-inset-right, 0px));
+  box-sizing: content-box;
+  min-height: 80px;
+}
+
+.header {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: var(--spacing-inline-l);
+  align-items: center;
+}
+
+.menu {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-weight: 500;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
