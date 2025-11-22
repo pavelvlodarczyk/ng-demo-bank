@@ -1,6 +1,6 @@
 {
-  "name": "demo-v21",
-  "version": "0.0.0",
+  "name": "ng-demo-bank",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start:web": "ng serve web",

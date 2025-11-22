@@ -5,7 +5,7 @@
     ✔ Do you want to create a 'zoneless' application without zone.js (Developer Preview)? Yes
 2. Add Service Worker
     ng generate service-worker
-    configurre PWA manifest, meta tags
+    configurre PWA manifest, meta tags, assets
 3. Create nescessery channels
     ng generate application <channel>
     ✔ Which stylesheet format would you like to use? Sass (SCSS)     [ https://sass-lang.com/documentation/syntax#scss                ]
@@ -36,14 +36,17 @@
     - web-codegen-scorer
     - dependency-cruiser ?
     - sherif ?
-10. Konfiguracja CSS
-    - czcionki
+10. SCSS Configuration
+    - tokens
+    - @font-face
     - normalizer
     - grid
-    - tokeny
-11. Konfiguracja asset-ów
+11. Asset Configuration
+    - js vendor
+    - media
+    - font
 10. CI/CD
-    - phrase - wersjonowanie tłumaczeń
+    - phrase - translation versioning
     - unleash - feature toogle
 
 ------------------------------------------
