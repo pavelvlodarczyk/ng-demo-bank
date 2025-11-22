@@ -48,6 +48,20 @@
 10. CI/CD
     - phrase - translation versioning
     - unleash - feature toogle
+11. Application Configuration (Architecture)
+    - dependency hell
+    - api
+    - environment configuration
+    - unit test
+    - e2e test (optional) Playwright
+    - documentation
+    - a11y configuration
+    - structure
+    - layout (scroll + env safe area)
+    - routing animation (main + modal)
+    - title update
+    - create documentation README.md
+
 
 ------------------------------------------
 
