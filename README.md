@@ -2,25 +2,36 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
 
-## Development server
 
-To start a local development server, run:
+## Starting Applications
+
+This workspace contains multiple Angular applications:
+
+- **Web**: `/projects/web`
+- **Admin**: `/projects/admin`
+- **Mobile**: `/projects/mobile`
+
+To start a specific app, use:
 
 ```bash
-ng serve
+ng serve web
+ng serve admin
+ng serve mobile
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Each app will run on a different port (default: web on 4200, admin on 4201, mobile on 4202). Open the corresponding URL in your browser.
 
 ## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+To generate a new component, run:
 
 ```bash
-ng generate component component-name
+ng generate component component-name --project web
+ng generate component component-name --project admin
+ng generate component component-name --project mobile
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+For a complete list of available schematics, run:
 
 ```bash
 ng generate --help
