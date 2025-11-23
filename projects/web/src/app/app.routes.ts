@@ -1,13 +1,42 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'main',
+    pathMatch: 'full',
+  },
 	{
-		path: '',
+		path: 'main',
 		loadComponent: () => import('./layout/view-main/view-main').then(m => m.ViewMain),
     children: [
       {
-        path: '',
+        path: 'about',
         loadComponent: () => import('../../../../components/child/child').then(m => m.Child)
+      },
+      {
+        path: 'modal',
+        outlet: 'modal',
+        loadComponent: () => import('./layout/view-modal/view-modal').then(m => m.ViewModal),
+        data: { outletName: 'modal' },
+        children: [
+          {
+            path: '',
+            loadComponent: () => import('../../../../components/child/child').then(m => m.Child)
+          }
+        ]
+      },
+      {
+        path: 'modal-1',
+        outlet: 'modal_1',
+        loadComponent: () => import('./layout/view-modal/view-modal').then(m => m.ViewModal),
+        data: { outletName: 'modal_1' },
+        children: [
+          {
+            path: '',
+            loadComponent: () => import('../../../../components/child/child').then(m => m.Child)
+          }
+        ]
       }
     ],
   }];

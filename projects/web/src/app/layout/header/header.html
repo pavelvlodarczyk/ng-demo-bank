@@ -7,8 +7,8 @@
   <nav class="menu">
     <ul>
       <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/main">About</a></li>
-      <li><a routerLink="/main/child">Contact</a></li>
+      <li><a routerLink="/main/about">About</a></li>
+      <li><a [routerLink]="['/main', {outlets: {modal: ['modal']}}]">Modal Contact</a></li>
     </ul>
   </nav>
 </header>

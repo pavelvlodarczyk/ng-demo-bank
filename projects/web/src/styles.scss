@@ -21,6 +21,8 @@
 
 body {
   margin: 0;
+  height: 100vh;
+  min-height: -webkit-fill-available;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   color: var(--color-text-primary);
   background-color: var(--color-background-primary);
