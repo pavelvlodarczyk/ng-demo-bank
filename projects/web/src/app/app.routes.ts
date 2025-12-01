@@ -15,6 +15,18 @@ export const routes: Routes = [
         loadComponent: () => import('../../../../components/child/child').then(m => m.Child)
       },
       {
+        path: 'modal-0',
+        outlet: 'modal_0',
+        loadComponent: () => import('./layout/view-modal/view-modal').then(m => m.ViewModal),
+        data: { outletName: 'modal_0' },
+        children: [
+          {
+            path: '',
+            loadComponent: () => import('../../../../components/child/child').then(m => m.Child)
+          }
+        ]
+      },
+      {
         path: 'modal',
         outlet: 'modal',
         loadComponent: () => import('./layout/view-modal/view-modal').then(m => m.ViewModal),
