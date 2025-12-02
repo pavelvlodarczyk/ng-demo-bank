@@ -2,15 +2,18 @@
 
 :root {
   --color-text-primary: #000;
+  --color-text-secondary: #666;
   --color-background-primary: #fff;
   --color-background-secondary: #f0f0f0;
 
+  --spacing-inset-l: 20px;
   --spacing-inline-l: 20px;
   --spacing-stack-l: 20px;
 
   @media (prefers-color-scheme: dark) {
     --color-text-primary: #fff;
-    --color-background-primary: #000;
+    --color-text-secondary: #999;
+    --color-background-primary: rgb(18, 18, 18);
     --color-background-secondary: #111;
   }
 }

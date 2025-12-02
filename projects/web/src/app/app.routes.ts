@@ -12,7 +12,7 @@ export const routes: Routes = [
     children: [
       {
         path: 'about',
-        loadComponent: () => import('../../../../components/child/child').then(m => m.Child)
+        loadComponent: () => import('../../../../components/dashboard/dashboard').then(m => m.Dashboard)
       },
       {
         path: 'modal-0',
