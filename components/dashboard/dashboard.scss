@@ -27,7 +27,7 @@ h2 {
 
   .amount-label {
     font-size: 14px;
-    color: #666;
+    color: var(--color-text-secondary);
   }
 
   .amount-value {
@@ -35,6 +35,68 @@ h2 {
     font-weight: bold;
   }
 }
+
+.product {
+    height: 160px;
+    border-radius: 16px;
+    perspective: 1000px;
+    cursor: pointer;
+    background: transparent;
+    position: relative;
+  }
+
+  .product-inner {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    transform-style: preserve-3d;
+    transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .product-account {
+    .product-face.front {
+      background-image: linear-gradient(120.256deg, rgb(0, 168, 107), rgb(34, 139, 34), rgb(0, 100, 0));
+    }
+
+    .product-face.back {
+      background-image: linear-gradient(120.256deg, rgb(0, 168, 107), rgb(34, 139, 34), rgb(0, 100, 0));
+    }
+  }
+
+  .product-card {
+    .product-face.front {
+      background-image: linear-gradient(120.256deg, rgb(123, 97, 255), rgb(91, 66, 230), rgb(63, 45, 196));
+    }
+
+    .product-face.back {
+      background-image: linear-gradient(120.256deg, rgb(123, 97, 255), rgb(91, 66, 230), rgb(63, 45, 196));
+    }
+  }
+
+  .product-card-black {
+    .product-face.front {
+      background-image: linear-gradient(120.256deg, rgb(74, 74, 74), rgb(45, 45, 45), rgb(26, 26, 26));
+    }
+
+    .product-face.back {
+      background-image: linear-gradient(120.256deg, rgb(74, 74, 74), rgb(45, 45, 45), rgb(26, 26, 26));
+    }
+  }
+
+  .product-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: inherit;
+  }
+
+  .product-face.back {
+    transform: rotateY(180deg);
+  }
+
+  .product.flipped .product-inner {
+    transform: rotateY(180deg);
+  }
 
 .products {
   display: flex;
@@ -45,24 +107,7 @@ h2 {
   overflow: auto;
 }
 
-.product {
-  border-radius: 12px;
-  height: 150px;
-  min-width: 250px;
-  background-color: #666;
-
-  &.product-account {
-    background-image: linear-gradient(120.256deg, rgb(0, 168, 107), rgb(34, 139, 34), rgb(0, 100, 0));
-  }
-
-  &.product-card {
-    background-image: linear-gradient(120.256deg, rgb(123, 97, 255), rgb(91, 66, 230), rgb(63, 45, 196));
-  }
-
-  &.product-card-black {
-    background-image: linear-gradient(120.256deg, rgb(74, 74, 74), rgb(45, 45, 45), rgb(26, 26, 26));
-  }
-}
+.product { min-width: 250px; }
 
 .avatar {
   display: flex;
@@ -88,8 +133,8 @@ h2 {
     max-width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: rgb(30, 30, 30);
-    border: 1px solid rgb(51, 51, 51);
+    background: var(--color-background-secondary);
+    border: 1px solid var(--color-border-primary);
     overflow: hidden;
     font-weight: bold;
 
@@ -110,13 +155,13 @@ h2 {
   width: 38px;
   height: 38px;
   border-radius: 12px;
-  background: var(--color-background-secondary);
+  background: var(--color-background-primary);
 }
 
 .card {
-  background: rgb(30, 30, 30);
+  background: var(--color-background-secondary);
   border-radius: 12px;
-  border: 1px solid rgb(51, 51, 51);
+  border: 1px solid var(--color-border-primary);
   margin-block: 20px;
   margin-left: calc(var(--spacing-inline-l) + env(safe-area-inset-left, 0px));
   margin-right: calc(var(--spacing-inline-l) + env(safe-area-inset-right, 0px));
@@ -135,7 +180,7 @@ h2 {
   background-color: transparent;
   width: calc(100% - 40px);
   text-align: left;
-  border-bottom: 1px solid rgb(51, 51, 51);
+  border-bottom: 1px solid var(--color-border-primary);
 
   &:last-child {
     border-bottom: none;

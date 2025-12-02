@@ -15,6 +15,14 @@ export const routes: Routes = [
         loadComponent: () => import('../../../../components/dashboard/dashboard').then(m => m.Dashboard)
       },
       {
+        path: 'a',
+        loadComponent: () => import('../../../../components/child/child').then(m => m.Child)
+      },
+      {
+        path: 'b',
+        loadComponent: () => import('../../../../components/child/child').then(m => m.Child)
+      },
+      {
         path: 'modal-0',
         outlet: 'modal_0',
         loadComponent: () => import('./layout/view-modal/view-modal').then(m => m.ViewModal),

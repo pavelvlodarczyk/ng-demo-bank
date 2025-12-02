@@ -4,9 +4,24 @@
 </div>
 
 <div class="products scroll-hidden">
-  <div class="product product-account"></div>
-  <div class="product product-card"></div>
-  <div class="product product-card-black"></div>
+  <div class="product product-account" (click)="toggleFlip($event)">
+    <div class="product-inner">
+      <div class="product-face front"></div>
+      <div class="product-face back"></div>
+    </div>
+  </div>
+  <div class="product product-card" (click)="toggleFlip($event)">
+    <div class="product-inner">
+      <div class="product-face front"></div>
+      <div class="product-face back"></div>
+    </div>
+  </div>
+  <div class="product product-card-black" (click)="toggleFlip($event)">
+    <div class="product-inner">
+      <div class="product-face front"></div>
+      <div class="product-face back"></div>
+    </div>
+  </div>
 </div>
 
 <h2>Płatności</h2>
@@ -64,7 +79,7 @@
 <h2>Ostatnie transakcje</h2>
 <div class="card">
   <div class="transactions">
-    <button class="list-item">
+    <button class="list-item" [routerLink]="['/main', {outlets: {modal: ['modal']}}]">
       <span class="icon">
         
       </span>
@@ -77,7 +92,7 @@
         <span class="transaction-additional-info">9 lis</span>
       </span>
     </button>
-    <button class="list-item">
+    <button class="list-item" [routerLink]="['/main', {outlets: {modal: ['modal']}}]">
       <span class="icon">
         
       </span>
@@ -90,7 +105,7 @@
         <span class="transaction-additional-info">9 lis</span>
       </span>
     </button>
-    <button class="list-item">
+    <button class="list-item" [routerLink]="['/main', {outlets: {modal: ['modal']}}]">
       <span class="icon">
         
       </span>
@@ -109,31 +124,31 @@
 <h2>Usługi</h2>
 <div class="card">
   <div class="services">
-    <button class="list-item">
+    <button class="list-item" [routerLink]="['/main', {outlets: {modal: ['modal']}}]">
       <span class="icon">
         
       </span>
       <span class="list-title">Przelew</span>
     </button>
-    <button class="list-item">
+    <button class="list-item" [routerLink]="['/main', {outlets: {modal: ['modal']}}]">
       <span class="icon">
         
       </span>
       <span class="list-title">Doładowanie</span>
     </button>
-    <button class="list-item">
+    <button class="list-item" [routerLink]="['/main', {outlets: {modal: ['modal']}}]">
       <span class="icon">
 
       </span>
       <span class="list-title">Płatności</span>
     </button>
-    <button class="list-item">
+    <button class="list-item" [routerLink]="['/main', {outlets: {modal: ['modal']}}]">
       <span class="icon">
 
       </span>
       <span class="list-title">Historia</span>
     </button>
-    <button class="list-item">
+    <button class="list-item" [routerLink]="['/main', {outlets: {modal: ['modal']}}]">
       <span class="icon">
 
       </span>
