@@ -1,6 +1,6 @@
-:root {
-  --tab-bg: #111315;
-  --tab-border: #242628;
+:host {
+  --tab-bg: #000;
+  --tab-border: #333;
   --tab-active: #5b63ff;
   --tab-text: #e9eaec;
   --tab-muted: #9aa0a6;
@@ -14,7 +14,6 @@
   z-index: 1000;
   background: var(--tab-bg);
   border-top: 1px solid var(--tab-border);
-  backdrop-filter: blur(10px);
   height: calc(48px + env(safe-area-inset-bottom, 0px));
 }
 
@@ -42,10 +41,14 @@
 
   a {
     display: flex;
+    row-gap: 4px;
     width: 100%;
+    text-decoration: none;
+    color: #fff;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    font-size: 12px;
   }
 }
 
@@ -54,9 +57,11 @@
   background: rgba(0, 0, 0, 0.12);
 }
 
-.tab-icon {
-  font-size: 18px;
-  line-height: 1;
+.tab-icon-action {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: var(--color-background-primary);
 }
 
 .tab-label {

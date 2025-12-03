@@ -6,20 +6,95 @@
 <div class="products scroll-hidden">
   <div class="product product-account" (click)="toggleFlip($event)">
     <div class="product-inner">
-      <div class="product-face front"></div>
-      <div class="product-face back"></div>
+      <div class="product-face front">
+        <div class="card-content account">
+          <div class="row top">
+            <span class="title">Dane rachunku</span>
+          </div>
+          <div class="row bottom">
+            <span class="value">13 233,54 zł</span>
+            <span class="label">Rachunenk główny</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-face back">
+        <div class="card-content account">
+          <div class="row top">
+            <span class="title">Dane rachunku</span>
+          </div>
+          <div class="row bottom">
+            <span class="label">IBAN</span>
+            <span class="value">PL 1234 5678 9012 3456</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="product product-card" (click)="toggleFlip($event)">
     <div class="product-inner">
-      <div class="product-face front"></div>
-      <div class="product-face back"></div>
+      <div class="product-face front">
+        <div class="card-content">
+          <div class="row top">
+            <span class="title">VISA</span>
+            <span class="masked">••• ••• 3245</span>
+          </div>
+          <div class="row bottom">
+            <span class="value">10 234,54 zł</span>
+            <span class="label">Karta debetowa</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-face back">
+        <div class="card-content">
+          <div class="row top">
+            <span class="title">Dane karty</span>
+          </div>
+          <div class="row bottom two-cols">
+            <div class="col">
+              <span class="label">CVV</span>
+              <span class="value">123</span>
+            </div>
+            <div class="col right">
+              <span class="label">Data ważności</span>
+              <span class="value">12/27</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="product product-card-black" (click)="toggleFlip($event)">
     <div class="product-inner">
-      <div class="product-face front"></div>
-      <div class="product-face back"></div>
+      <div class="product-face front">
+        <div class="card-content">
+          <div class="row top">
+            <span class="title">VISA</span>
+            <span class="masked">••• ••• 4432</span>
+          </div>
+          <div class="row bottom">
+            <span class="value">22 114,22 zł</span>
+            <span class="label">Karta Black</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="product-face back">
+        <div class="card-content">
+          <div class="row top">
+            <span class="title">Dane karty</span>
+          </div>
+          <div class="row bottom two-cols">
+            <div class="col">
+              <span class="label">CVV</span>
+              <span class="value">456</span>
+            </div>
+            <div class="col right">
+              <span class="label">Data ważności</span>
+              <span class="value">08/26</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -129,30 +204,35 @@
         
       </span>
       <span class="list-title">Przelew</span>
+      <span class="icon-action"></span>
     </button>
     <button class="list-item" [routerLink]="['/main', {outlets: {modal: ['modal']}}]">
       <span class="icon">
         
       </span>
       <span class="list-title">Doładowanie</span>
+      <span class="icon-action"></span>
     </button>
     <button class="list-item" [routerLink]="['/main', {outlets: {modal: ['modal']}}]">
       <span class="icon">
 
       </span>
       <span class="list-title">Płatności</span>
+      <span class="icon-action"></span>
     </button>
     <button class="list-item" [routerLink]="['/main', {outlets: {modal: ['modal']}}]">
       <span class="icon">
 
       </span>
       <span class="list-title">Historia</span>
+      <span class="icon-action"></span>
     </button>
     <button class="list-item" [routerLink]="['/main', {outlets: {modal: ['modal']}}]">
       <span class="icon">
 
       </span>
       <span class="list-title">Ustawienia</span>
+      <span class="icon-action"></span>
     </button>
   </div>
 </div>

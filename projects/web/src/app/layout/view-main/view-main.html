@@ -1,9 +1,18 @@
 <app-bank-header />
-<app-bank-tab-bars />
+
 <main>
-   <router-outlet />
+   <nav>
+      <app-bank-sidebar />
+      <app-bank-tab-bars />
+   </nav>
+   <div class="content">
+      <router-outlet />
+      <app-bank-footer />
+   </div>
+   <aside>
+      sidebar
+   </aside>
 </main>
-<app-bank-footer />
 
 <router-outlet name="modal_0"></router-outlet>
 <router-outlet name="modal"></router-outlet>

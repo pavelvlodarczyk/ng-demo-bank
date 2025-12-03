@@ -1,6 +1,9 @@
 <dialog #dialogRef>
   <div class="view-dialog">
-    <button (click)="close()">Zamknij</button>
+    <div class="dialog-header">
+      <h2>Tytuł</h2>
+      <button (click)="close()" class="icon-close-dialog"></button>
+    </div>
 
     <router-outlet />
   </div>

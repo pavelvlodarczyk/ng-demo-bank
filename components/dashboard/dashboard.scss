@@ -14,7 +14,7 @@ h2 {
   padding-left: calc(var(--spacing-inline-l) + env(safe-area-inset-left, 0px));
   padding-right: calc(var(--spacing-inline-l) + env(safe-area-inset-right, 0px));
   margin-block: 0;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .amount {
@@ -105,9 +105,111 @@ h2 {
   padding-left: calc(var(--spacing-inline-l) + env(safe-area-inset-left, 0px));
   padding-right: calc(var(--spacing-inline-l) + env(safe-area-inset-right, 0px));
   overflow: auto;
+
+  @media (min-width: 768px) {
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
 }
 
 .product { min-width: 250px; }
+
+/* Treści na frontach kart */
+.product-face.front {
+  display: flex;
+}
+
+.card-content {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 8px;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+}
+
+.card-content .row.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card-content .row.bottom {
+  display: grid;
+  gap: 4px;
+}
+
+.card-content .row.bottom.two-cols {
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  column-gap: 20px;
+}
+
+.card-content .row.bottom .col.right {
+  text-align: right;
+}
+/* back-face adjustments for spacing and contrast */
+.product-face.back .card-content .row.bottom.two-cols .col {
+  display: grid;
+  row-gap: 4px;
+}
+
+.product-face.back .card-content .label {
+  font-weight: 600;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.product-face.back .card-content .value {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.product-face.back .card-content.card .label { color: #efeaff; }
+.product-face.back .card-content.card .value { color: #ffffff; }
+.product-face.back .card-content.card.black .label { color: #d7d9dc; }
+.product-face.back .card-content.card.black .value { color: #ffffff; }
+.product-face.back .card-content.account .label { color: #e2f2e7; }
+.product-face.back .card-content.account .value { color: #ffffff; }
+
+.card-content .title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.card-content .masked {
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.front .card-content .value {
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.front .card-content .label {
+  font-weight: 500;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* Warianty kolorów dla czytelności */
+.card-content.account .title { color: #ffffff; }
+.card-content.account .label { color: #e2f2e7; }
+.card-content.account .value { color: #ffffff; }
+
+.card-content.card .title { color: #ffffff; }
+.card-content.card .masked { color: #efeaff; }
+.card-content.card .value { color: #ffffff; }
+.card-content.card .label { color: #efeaff; }
+
+.card-content.card.black .title { color: #ffffff; }
+.card-content.card.black .masked { color: #d7d9dc; }
+.card-content.card.black .value { color: #ffffff; }
+.card-content.card.black .label { color: #d7d9dc; }
 
 .avatar {
   display: flex;
@@ -116,6 +218,11 @@ h2 {
   padding-block: var(--spacing-inset-l);
   padding-left: calc(var(--spacing-inline-l) + env(safe-area-inset-left, 0px));
   padding-right: calc(var(--spacing-inline-l) + env(safe-area-inset-right, 0px));
+
+  @media (min-width: 768px) {
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
 
   .avatar-item {
     text-align: center;
@@ -158,6 +265,14 @@ h2 {
   background: var(--color-background-primary);
 }
 
+.icon-action {
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--color-background-primary);
+}
+
 .card {
   background: var(--color-background-secondary);
   border-radius: 12px;
@@ -165,6 +280,14 @@ h2 {
   margin-block: 20px;
   margin-left: calc(var(--spacing-inline-l) + env(safe-area-inset-left, 0px));
   margin-right: calc(var(--spacing-inline-l) + env(safe-area-inset-right, 0px));
+
+  @media (min-width: 768px) {
+    margin-left: env(safe-area-inset-left, 0px);
+  }
+
+  @media (min-width: 1600px) {
+    margin-right: env(safe-area-inset-right, 0px);
+  }
 }
 
 .list-item {
