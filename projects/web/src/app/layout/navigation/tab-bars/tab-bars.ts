@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-bank-tab-bars',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './tab-bars.html',
   styleUrls: ['./tab-bars.scss'],
 })

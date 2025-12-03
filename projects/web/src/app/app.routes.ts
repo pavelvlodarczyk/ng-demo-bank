@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'main',
+    redirectTo: 'main/about',
     pathMatch: 'full',
   },
 	{
@@ -11,15 +11,16 @@ export const routes: Routes = [
 		loadComponent: () => import('./layout/view-main/view-main').then(m => m.ViewMain),
     children: [
       {
+        path: '',
+        redirectTo: 'about',
+        pathMatch: 'full',
+      },
+      {
         path: 'about',
         loadComponent: () => import('../../../../components/dashboard/dashboard').then(m => m.Dashboard)
       },
       {
         path: 'a',
-        loadComponent: () => import('../../../../components/child/child').then(m => m.Child)
-      },
-      {
-        path: 'b',
         loadComponent: () => import('../../../../components/child/child').then(m => m.Child)
       },
       {
