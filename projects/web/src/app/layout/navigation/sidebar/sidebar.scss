@@ -18,11 +18,12 @@ aside {
   background: #f9f9f9;
   backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid var(--sb-border);
+  padding: 16px 12px;
 }
 
 .sidebar {
   height: 100%;
-  padding: 16px 12px;
+  padding-block: 16px;
   box-sizing: border-box;
 }
 

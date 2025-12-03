@@ -14,7 +14,8 @@ h2 {
   padding-left: calc(var(--spacing-inline-l) + env(safe-area-inset-left, 0px));
   padding-right: calc(var(--spacing-inline-l) + env(safe-area-inset-right, 0px));
   margin-block: 0;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: normal;
 }
 
 .amount {

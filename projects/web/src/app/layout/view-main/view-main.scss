@@ -37,6 +37,8 @@ main {
     background-color: var(--color-background-secondary);
     border-radius: 12px;
     margin-right: 20px;
+    padding: 20px;
+    box-sizing: border-box;
 
     @media (min-width: 1600px) {
       display: block;
