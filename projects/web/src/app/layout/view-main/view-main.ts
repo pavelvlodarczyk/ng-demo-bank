@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
@@ -9,7 +9,7 @@ import { TabViews } from "../navigation/tab-views/tab-views";
 
 @Component({
   selector: 'app-bank-view-main',
-  imports: [Header, Footer, RouterOutlet, TabBarsComponent, Sidebar, TabViews],
+  imports: [Header, Footer, RouterOutlet, RouterLink, RouterLinkActive, TabBarsComponent, Sidebar, TabViews],
   templateUrl: './view-main.html',
   styleUrl: './view-main.scss',
 })

@@ -1,0 +1,14 @@
+<nav class="sidebar">
+  <ul class="sidebar-list">
+    <li class="sidebar-item" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+      <a [routerLink]="['/main/about']" aria-label="Home">
+        <span class="sidebar-label">Home</span>
+      </a>
+    </li>
+    <li class="sidebar-item" routerLinkActive="active">
+      <a [routerLink]="['/main/a']" aria-label="About">
+        <span class="sidebar-label">About</span>
+      </a>
+    </li>
+  </ul>
+</nav>

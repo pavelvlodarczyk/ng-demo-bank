@@ -11,9 +11,11 @@
    </div>
    <aside>
       <app-bank-tab-views>
-         <button class="selected">Tab 1</button>
-         <button>Tab 2</button>
+         <button [routerLink]="['/main', {outlets: {aside: ['tab1']}}]" routerLinkActive="active">Tab 1</button>
+         <button [routerLink]="['/main', {outlets: {aside: ['tab2']}}]" routerLinkActive="active">Tab 2</button>
       </app-bank-tab-views>
+
+      <router-outlet name="aside"></router-outlet>
    </aside>
 </main>
 

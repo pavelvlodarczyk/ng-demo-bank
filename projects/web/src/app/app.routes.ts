@@ -58,6 +58,26 @@ export const routes: Routes = [
             loadComponent: () => import('../../../../components/child/child').then(m => m.Child)
           }
         ]
+      },
+      {
+        path: 'menu',
+        outlet: 'sidebar',
+        loadComponent: () => import('./layout/navigation/sidebar/main-menu/main-menu').then(m => m.MainMenu),
+      },
+      {
+        path: 'ulubione',
+        outlet: 'sidebar',
+        loadComponent: () => import('./layout/navigation/sidebar/favourite/favourite').then(m => m.Favourite),
+      },
+      {
+        path: 'tab1',
+        outlet: 'aside',
+        loadComponent: () => import('./layout/navigation/sidebar/main-menu/main-menu').then(m => m.MainMenu),
+      },
+      {
+        path: 'tab2',
+        outlet: 'aside',
+        loadComponent: () => import('./layout/navigation/sidebar/favourite/favourite').then(m => m.Favourite),
       }
     ],
   }];
